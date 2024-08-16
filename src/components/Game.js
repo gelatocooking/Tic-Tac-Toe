@@ -25,17 +25,17 @@ const Game = () => {
       return; // Ignoruj kliknięcia po wygranej
     }
 
-    setCounter((prev) => prev + 1);
     const clickedSquare = event.target; // Poprawiona nazwa zmiennej
-    colorText(turn, clickedSquare);
     if (clickedSquare.textContent !== "") {
       return; // Jeśli kafelek już został kliknięty, ignoruj to kliknięcie
     }
     clickedSquare.textContent = turn; // Poprawiona nazwa zmiennej
+    colorText(turn, clickedSquare);
     const clickedSquareIndex = parseInt(clickedSquare.getAttribute("id")); // Poprawiona nazwa zmiennej
 
     getId(clickedSquareIndex, turn);
     changeTurn();
+    setCounter((prev) => prev + 1);
   }
 
   function changeTurn() {
@@ -92,7 +92,6 @@ const Game = () => {
     setWinner("");
     setCounter(0);
 
-    // Clear the text content of each square
     const squares = document.querySelectorAll(`.${styles.square}`);
     squares.forEach((square) => {
       square.textContent = "";
@@ -104,7 +103,6 @@ const Game = () => {
   return (
     <div className={styles.game}>
       <div className={`${styles.gradientDiv}`}></div>
-
       <div className={styles.titleDiv}>
         <span id={styles.tic}>Tic</span>
         <span id={styles.tac}>Tac</span>
@@ -122,8 +120,7 @@ const Game = () => {
           </span>
         )}
         {winner === "" && counter < 9 && <span>{turn}'s turn</span>}
-      </div>
-
+      </div>{" "}
       <div className={`${styles.gameBoard}`}>
         <div onClick={handleSquareClick} className={styles.square} id="0"></div>
         <div onClick={handleSquareClick} className={styles.square} id="1"></div>

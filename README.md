@@ -6,8 +6,7 @@ A simple yet engaging Tic Tac Toe game built using **React.js**. This project sh
 - **React.js** - A JavaScript library for building user interfaces.
 
 ## 📸 Github Pages 
-https://github.com/gelatocooking/Tic-Tac-Toe
-
+https://gelatocooking.github.io/Tic-Tac-Toe/
 
 ## 🔧 Installation & Setup
 1. Clone the repository:

@@ -1,0 +1,204 @@
+.gradientDiv {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(45, 30, 110, 0.187) 0%,
+    rgba(220, 33, 220, 0.66) 70%
+  );
+  animation: movingGradient 10s infinite;
+  z-index: -9999;
+  filter: blur(300px);
+}
+.nd {
+  animation: movingGradient 15s infinite;
+  background: radial-gradient(
+    circle,
+    rgba(43, 255, 0, 0.187) 0%,
+    rgba(0, 255, 0, 0.66) 70%
+  );
+}
+p {
+  margin-top: 10px;
+}
+
+@keyframes movingGradient {
+  0% {
+    top: -50%;
+    left: -100%;
+  }
+  20% {
+    top: -50%;
+    left: 100%;
+  }
+
+  60% {
+    top: 150%;
+    left: 200%;
+  }
+  80% {
+    top: 150%;
+    left: -100%;
+  }
+  100% {
+    top: 0%;
+    left: -100%;
+  }
+}
+
+.game {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(10, 10, 10, 0.573);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+  z-index: 9999;
+}
+.red {
+  color: red !important;
+}
+.green {
+  color: green !important;
+}
+#tic {
+  color: red;
+}
+#tac {
+  color: green;
+}
+#toe {
+  color: rgb(131, 131, 255);
+}
+.titleDiv * {
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.132);
+}
+.titleDiv {
+  border: 1px solid rgba(193, 190, 190, 0.374);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 1);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-size: 3rem;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.x {
+  color: green;
+}
+.o {
+  color: red;
+}
+.gameBoard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.square {
+  width: 100%;
+  position: relative;
+  border: 1px solid rgba(58, 50, 50, 0.749);
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.779);
+}
+.square:hover {
+  background-color: rgba(0, 0, 0, 0.247);
+}
+
+button {
+  margin-top: 30px;
+  padding: 15px 30px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  transition: background-color 0.5s ease-in-out;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.779);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+  .game {
+    max-width: 450px;
+  }
+
+  .titleDiv {
+    font-size: 2.5rem;
+  }
+
+  .textContainer {
+    font-size: 1.2rem;
+  }
+
+  .gameBoard {
+    max-width: 400px;
+  }
+
+  .square {
+    font-size: 2.5rem;
+  }
+
+  button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .game {
+    max-width: 100%;
+    padding: 20px; /* Zmniejszenie paddingu na najmniejszych ekranach */
+  }
+
+  .titleDiv {
+    font-size: 2rem; /* Dalsze zmniejszenie rozmiaru czcionki */
+  }
+
+  .textContainer {
+    font-size: 1rem; /* Dalsze zmniejszenie rozmiaru czcionki */
+  }
+
+  .gameBoard {
+    max-width: 350px; /* Dalsze zmniejszenie maksymalnej szerokości tablicy */
+  }
+
+  .square {
+    font-size: 2rem; /* Dalsze zmniejszenie rozmiaru czcionki w polach */
+  }
+
+  button {
+    padding: 10px 20px; /* Dalsze zmniejszenie paddingu przycisku */
+    font-size: 1rem; /* Dalsze zmniejszenie rozmiaru czcionki przycisku */
+  }
+}
